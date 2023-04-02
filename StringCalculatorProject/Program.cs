@@ -8,7 +8,7 @@ namespace KataProgram
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter string contains from 0 to 3 numbers: ");
+            Console.WriteLine("Enter string contains any amout of numbers: ");
             string numbers = Console.ReadLine();
 
             var sc = new StringCalculator();
