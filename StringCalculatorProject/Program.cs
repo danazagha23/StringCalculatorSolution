@@ -8,11 +8,21 @@ namespace KataProgram
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter string contains any amout of numbers: ");
-            string numbers = "2,3\n4";
+            Console.WriteLine("Enter string with delimiters: [yes, no]");
+            bool WithDelimeter = Console.ReadLine() == "yes"? true: false;
 
+            Console.WriteLine("Enter string:");
+            string numbers = Console.ReadLine();
             var sc = new StringCalculator();
-            Console.WriteLine(sc.Add(numbers));
+            if (WithDelimeter)
+            {
+                Console.WriteLine(sc.Add_SupportDifferentDelimiters(numbers));
+            } 
+            else
+            {
+                Console.WriteLine(sc.Add(numbers));
+            }
+
         }
     }
 }
