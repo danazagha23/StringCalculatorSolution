@@ -5,15 +5,17 @@ namespace TestProject
 {
     public class StringCalculatorTests
     {
-        [Fact]
-        public void Add_Test()
+        [Theory]
+        [InlineData("2\n3,1,5", new char[] { ',', '\n' })]
+        [InlineData("2;3;1;5", new char[] { ';' })]
+        public void Add_Test(string nums, char[] deli)
         {
             //Arrange 
             int expected = 11;
 
             //Act
             var numbers = new StringCalculator();
-            int actual = numbers.Add("2\n3,1,5");
+            int actual = numbers.Add(nums, deli);
 
             //Assert
             Assert.Equal(expected, actual);

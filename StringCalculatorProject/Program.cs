@@ -10,17 +10,22 @@ namespace KataProgram
         {
             Console.WriteLine("Enter string with delimiters: [yes, no]");
             bool WithDelimeter = Console.ReadLine() == "yes"? true: false;
-
-            Console.WriteLine("Enter string:");
-            string numbers = Console.ReadLine();
-            var sc = new StringCalculator();
+            
             if (WithDelimeter)
             {
-                Console.WriteLine(sc.Add_SupportDifferentDelimiters(numbers));
+                Console.WriteLine("Enter string:");
+                string delimiter = Console.ReadLine();
+                Console.WriteLine();
+                string numbers = Console.ReadLine();
+                var sc = new StringCalculator();
+                Console.WriteLine(sc.Add(numbers, new char[] { delimiter[2] }));
             } 
             else
             {
-                Console.WriteLine(sc.Add(numbers));
+                Console.WriteLine("Enter string:");
+                string numbers = Console.ReadLine();
+                var sc = new StringCalculator();
+                Console.WriteLine(sc.Add(numbers, new char[] { ',', '\n' })); ;
             }
 
         }
