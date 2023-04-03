@@ -8,6 +8,7 @@ namespace TestProject
         [Theory]
         [InlineData("2\n3,1,5", new char[] { ',', '\n' })]
         [InlineData("2;3;1;5", new char[] { ';' })]
+        [InlineData("1001,2", new char[] { ',' })]
         public void Add_Test(string nums, char[] deli)
         {
             //Arrange 
@@ -30,5 +31,6 @@ namespace TestProject
 
             Assert.Equal("negatives not allowed: -1", ex.Message);
         }
+
     }
 }
