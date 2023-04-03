@@ -9,11 +9,11 @@ namespace TestProject
         public void Add_Test()
         {
             //Arrange 
-            int expected = 10;
+            int expected = 11;
 
             //Act
             var numbers = new StringCalculator();
-            int actual = numbers.Add("2,3,4,1");
+            int actual = numbers.Add("2\n3,1,5");
 
             //Assert
             Assert.Equal(expected, actual);
